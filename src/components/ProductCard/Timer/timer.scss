@@ -1,0 +1,31 @@
+.timer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  //   border: 1px solid black;
+  width: 90%;
+
+  &__countdown {
+    font-weight: bold;
+  }
+
+  &__link-btn,
+  &__link-btn--nonActive {
+    background-color: steelblue;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+  }
+
+  &__link-btn:hover {
+    opacity: 0.8;
+  }
+
+  &__link-btn--nonActive {
+    background-color: gray;
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
