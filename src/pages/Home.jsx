@@ -1,7 +1,8 @@
 import React from "react"
 // import dayjs from "dayjs"
 // import logo from "../logo.svg"
-import { ProductCard } from "../components/ProductCard"
+// import { ProductCard } from "../components/ProductCard"
+import { ListProductCard } from "../components/ListProductCard"
 
 // const randomtime = dayjs().add(12, "second")
 
@@ -9,7 +10,8 @@ function Home() {
   return (
     <>
       <div>Home</div>
-      <ProductCard />
+      <ListProductCard />
+      {/* <ProductCard /> */}
       {/* <Timer radomTime={randomtime} /> */}
 
       {/* <div className="App">

@@ -4,9 +4,9 @@ import "./product-card.scss"
 import Countdown from "react-countdown"
 import { displayTimer } from "./Timer/Utils/displayTimer"
 
-function ProductCard() {
+function ProductCard({ id, title, image }) {
   // const randomTime = Date.now() + 7000
-  /*  set a random countdown timer for the datails link to work
+  /*  set a random countdown timer for the details link to work
   rightnow it is set between 0 and 3 minutes (180 seconds)
   note that it got to be passed in miliseconds to <Countdown /> component
   */
@@ -15,15 +15,9 @@ function ProductCard() {
   return (
     <div className="card">
       <div className="card__image-container">
-        <img
-          className="card__image"
-          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
-        />
+        <img className="card__image" src={image} alt={title} />
       </div>
-      <p className="card__title">
-        Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
-      </p>
+      <p className="card__title">{title}</p>
       {/* <div className="card__details-container">
         <p className="card__timer">contador regresivo</p>
         <a href="uno" className="card__button">
