@@ -1,5 +1,5 @@
 import Home from "./Home"
-import About from "./About"
+import AbouLanding from "./AboutLanding"
 import ProductDetails from "./ProductDetails"
 
-export { Home, About, ProductDetails }
+export { Home, AbouLanding, ProductDetails }
