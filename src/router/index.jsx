@@ -16,7 +16,7 @@ const routerconfig = createBrowserRouter([
     element: <AbouLanding />,
   },
   {
-    path: "/product/:id",
+    path: "/detalle/:id",
     element: <ProductDetails />,
   },
 ])

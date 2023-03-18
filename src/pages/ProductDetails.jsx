@@ -1,55 +1,46 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { Context } from "../Context"
 import { ProductDetail } from "../components/ProductDetail"
-import { useData } from "../hooks"
 import { getOneProduct } from "../services/productsAPI"
 
 function ProductDetails() {
   const { id: idParam } = useParams()
-  const [unProducto, setUnProducto] = useState([])
+  const [oneProduct, setOneProduct] = useState({})
+  // use the contex to set the detailed product
+  const context = useContext(Context)
+  const { FechtedProducts } = context || {}
+  const { productsData } = FechtedProducts || []
 
-  const getUnProd = async (id) => {
-    const url = `https://fakestoreapi.com/products/${id}`
-    try {
-      const request = await fetch(url)
-      const data = await request.json()
-      console.log("DATA", data)
-      // setUnProducto(data)
-      return data
-    } catch (error) {
-      return error
-    }
+  const getData = async (id) => {
+    const data = await getOneProduct(id)
+    setOneProduct(data)
   }
-
   useEffect(() => {
-    const item = unProducto.find((item) => item.id === idParam)
-    if (item) {
-      setUnProducto(item)
+    const actualProduct = productsData.find(
+      (item) => item.id === parseInt(idParam)
+    )
+    if (actualProduct) {
+      setOneProduct(actualProduct)
+      console.log("actual product", actualProduct)
     } else {
-      console.log(getUnProd(idParam))
-      setUnProducto(getUnProd(idParam))
-      // getUnProd(idParam)
+      getData(idParam)
     }
   }, [])
 
-  /*  const { id: idParam } = useParams()
-  // console.log(idParam)
-  const { data: product } = useData([], () => getOneProduct(idParam))
-  // console.log(product)
-
-  const newProduct = async () => {
-    const APIdata = await getOneProduct(idParam)
-    return APIdata
-  }
-
-  console.log(newProduct) */
-
+  const { id, title, image, price, description, rating, category } =
+    oneProduct || {}
   return (
     <div>
       Display selected product
-      <ProductDetail />
       <h1>El producto sera el {idParam}</h1>
-      <p>price= {unProducto.price}</p>
+      <ProductDetail />
+      <p>{title}</p>
+      <p>{description}</p>
+      <p>{price}</p>
+      <p>{category}</p>
+      <img src={image} alt={title} />
+      {/* <p>price= {unProducto.price}</p> */}
     </div>
   )
 }

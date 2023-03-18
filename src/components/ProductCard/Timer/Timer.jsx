@@ -1,12 +1,20 @@
-import React from "react"
+import React, { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { Context } from "../../../Context"
+
 import "./timer.scss"
 
-function Timer({ minutes, seconds, completed, url }) {
+function Timer({ minutes, seconds, completed, urlId }) {
+  const navigate = useNavigate()
+  const context = useContext(Context)
+  const { redirectDetailsRoute } = context
+
   const handleClick = () => {
     if (!completed) {
-      console.log("go to link", url)
+      console.log("go to link", urlId)
+      navigate(`${redirectDetailsRoute}/${urlId}`)
     } else {
-      // alert("wait for countdown to finish ")
+      // alert("can't go to the product ")
     }
   }
 

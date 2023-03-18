@@ -27,7 +27,7 @@ function ProductCard({ id, title, image }) {
       <Countdown
         date={randomTime}
         renderer={displayTimer}
-        url="ulr_ejemplo"
+        urlId={id}
         className="countdown"
       />
     </div>
