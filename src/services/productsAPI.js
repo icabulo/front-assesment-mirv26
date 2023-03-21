@@ -15,7 +15,7 @@ export const getOneProduct = async (id) => {
   try {
     const request = await fetch(url)
     const data = await request.json()
-    console.log("esta dentro del serviocio API", data)
+    // console.log("esta dentro del serviocio API", data)
     return data
   } catch (error) {
     return error

@@ -10,23 +10,21 @@ function ListProductCard() {
   // get data with a costum hoook (API request)
   const { data: products } = useData([], getAllProducts)
   const context = useContext(Context)
-  // console.log("datos de la API", products)
 
   // uptade product saved in the Context container
   useEffect(() => {
     context.FechtedProducts.productsData = products
     context.redirectDetailsRoute = "/detalle"
-    console.log(context.FechtedProducts.productsData)
   }, [products])
 
+  // create an array of elements with .map method. That is the product list
   const displayList = products.map(({ id, title, image }, index) => (
     <ProductCard key={nanoid()} title={title} image={image} id={id} />
   ))
-  // console.log("LIST", displayList)
 
   return (
     <>
-      <div>PRODUCTOS</div>
+      <h1>PRODUCTS</h1>
       <div className="List">{products.length >= 1 && displayList}</div>
     </>
   )

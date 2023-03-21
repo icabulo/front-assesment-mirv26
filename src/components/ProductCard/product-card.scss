@@ -9,6 +9,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.8em;
+  justify-content: space-around;
 
   &__image-container {
     max-width: 10vw;
@@ -22,21 +24,6 @@ img {
   &__title {
     font-size: 2rem;
     font-weight: bold;
+    text-align: center;
   }
-
-  /*  &__details-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    width: 90%;
-  }
-
-  &__timer {
-    color: lightgreen;
-  }
-
-  &__button {
-    background-color: lightgreen;
-  } */
 }
