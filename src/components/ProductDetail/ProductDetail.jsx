@@ -3,6 +3,7 @@ import "./product-detail.scss"
 import { useNavigate } from "react-router-dom"
 
 function ProductDetail({
+  // eslint-disable-next-line no-unused-vars
   id,
   title,
   image,

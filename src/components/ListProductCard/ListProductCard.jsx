@@ -13,12 +13,13 @@ function ListProductCard() {
 
   // uptade product saved in the Context container
   useEffect(() => {
+    // eslint-disable-next-line react/destructuring-assignment
     context.FechtedProducts.productsData = products
     context.redirectDetailsRoute = "/detalle"
   }, [products])
 
   // create an array of elements with .map method. That is the product list
-  const displayList = products.map(({ id, title, image }, index) => (
+  const displayList = products.map(({ id, title, image }) => (
     <ProductCard key={nanoid()} title={title} image={image} id={id} />
   ))
 

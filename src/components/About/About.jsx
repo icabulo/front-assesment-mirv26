@@ -22,8 +22,8 @@ function About() {
         <div className="about__contact-info">
           <h3>Bio</h3>
           <p className="bio">
-            I'm an enthusiastic web developer from Colombia, also learning how
-            to code in a full stack bootcamp.
+            I&apos;m an enthusiastic web developer from Colombia, also learning
+            how to code in a full stack bootcamp.
           </p>
           <h3>Contact Me</h3>
           <p>Email: ivancabulo@example.com</p>

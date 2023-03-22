@@ -2,7 +2,9 @@
 // import { About } from "../../../About"
 import { Timer } from "../index"
 
-export function displayTimer({ minutes, seconds, completed, props }) {
+export function displayTimer({
+  minutes, seconds, completed, props,
+}) {
   if (completed) {
     // if compleated then no url is send to the component
 

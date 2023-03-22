@@ -20,6 +20,7 @@ function ProductDetails() {
   }
   useEffect(() => {
     const actualProduct = productsData.find(
+      // eslint-disable-next-line radix, comma-dangle
       (item) => item.id === parseInt(idParam)
     )
     // if actualProduct is truthty then data was gathered in the previous page
@@ -32,6 +33,7 @@ function ProductDetails() {
   }, [])
 
   // destructuring the state object to be passed as props to the rendered component <ProductDetail/>
+  // eslint-disable-next-line operator-linebreak, object-curly-newline
   const { id, title, image, price, description, rating, category } =
     oneProduct || {}
   return (

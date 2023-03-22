@@ -4,6 +4,7 @@ import { Context } from "../../../Context"
 
 import "./timer.scss"
 
+// eslint-disable-next-line object-curly-newline
 function Timer({ minutes, seconds, completed, urlId }) {
   const navigate = useNavigate()
   const context = useContext(Context)
